@@ -1,0 +1,56 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card list-container">
+          <div class="card-body py-4 px-4 px-md-5">
+
+            <p class="h1 text-center mt-3 pb-3 text-primary">
+              <i class="fas fa-check-square me-1"></i>
+              <u>Список задач</u>
+            </p>
+
+            <div class="pb-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-row align-items-center">
+                    <input type="text" class="form-control form-control-lg"
+                           placeholder="Поиск задачи...">
+                    <div>
+                      <button type="button" class="btn btn-primary">Поиск</button>
+                    </div>
+                    <div class="m-lg-1">
+                      <button type="button" class="btn btn-outline-info">Сбросить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-end align-items-center pt-2 pb-3">
+              <p class="small mb-0 me-2 text-muted">Фильтр</p>
+              <select class="form-select-sm">
+                <option value="all">Все</option>
+                <option value="completed">Выполнено</option>
+                <option value="completed">Не выполнено</option>
+                <option value="active">Active</option>
+              </select>
+              <div class="m-lg-1">
+                <button type="button" class="btn btn-outline-info">Сбросить</button>
+              </div>
+            </div>
+
+            <div class="list-group rounded-0 bg-transparent">
+              <app-item [task]="'Buy groceries for next week'" [isChecked]="true" (toggle)="onToggle()"></app-item>
+              <app-item [task]="'Buy groceries for next week'" [isChecked]="true" (toggle)="onToggle()"></app-item>
+              <app-item [task]="'Buy groceries for next week'" [isChecked]="true" (toggle)="onToggle()"></app-item>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
