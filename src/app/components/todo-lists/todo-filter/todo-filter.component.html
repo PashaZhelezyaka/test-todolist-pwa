@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between align-items-center pt-2 pb-3">
+  <div>
+    <button (click)="onSort()" type="button" class="btn btn-outline-primary">
+      <i class="bi bi-arrow-up-down"></i> Сортировать по имени
+    </button>
+  </div>
+  <div class="d-flex align-items-center">
+    <p class="small mb-0 me-2 text-muted">Фильтр</p>
+    <select class="form-select-sm" [(ngModel)]="typeFilter" (change)="onFilterChange()">
+      <option value="all">Все</option>
+      <option value="completed">Выполнено</option>
+      <option value="not_completed">Не выполнено</option>
+    </select>
+    <div class="m-lg-1">
+      <button (click)="onReset()" type="button" class="btn btn-outline-info">Сбросить</button>
+    </div>
+  </div>
+</div>

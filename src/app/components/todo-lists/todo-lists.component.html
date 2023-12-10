@@ -12,40 +12,20 @@
 
             <div class="pb-2">
               <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-row align-items-center">
-                    <input type="text" class="form-control form-control-lg"
-                           placeholder="Поиск задачи...">
-                    <div>
-                      <button type="button" class="btn btn-primary">Поиск</button>
-                    </div>
-                    <div class="m-lg-1">
-                      <button type="button" class="btn btn-outline-info">Сбросить</button>
-                    </div>
-                  </div>
-                </div>
+                <app-todo-search></app-todo-search>
               </div>
             </div>
 
             <hr class="my-4">
 
-            <div class="d-flex justify-content-end align-items-center pt-2 pb-3">
-              <p class="small mb-0 me-2 text-muted">Фильтр</p>
-              <select class="form-select-sm">
-                <option value="all">Все</option>
-                <option value="completed">Выполнено</option>
-                <option value="completed">Не выполнено</option>
-                <option value="active">Active</option>
-              </select>
-              <div class="m-lg-1">
-                <button type="button" class="btn btn-outline-info">Сбросить</button>
-              </div>
+            <div>
+              <app-todo-filter></app-todo-filter>
             </div>
 
             <div class="list-group rounded-0 bg-transparent">
-              <app-item [task]="'Buy groceries for next week'" [isChecked]="true" (toggle)="onToggle()"></app-item>
-              <app-item [task]="'Buy groceries for next week'" [isChecked]="true" (toggle)="onToggle()"></app-item>
-              <app-item [task]="'Buy groceries for next week'" [isChecked]="true" (toggle)="onToggle()"></app-item>
+              @for (task of tasks; track task.id) {
+                <app-item [task]="task"></app-item>
+              }
             </div>
 
           </div>

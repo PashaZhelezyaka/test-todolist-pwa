@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TodolistService } from "../../../services/todolist.service";
+import { TaskInterface } from "../../interface/todolist.interface";
 
 @Component({
   selector: 'app-item',
@@ -7,12 +9,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ItemComponent {
 
-  @Input() task: string = '';
-  @Input() isChecked: boolean = false;
-  @Output() toggle: EventEmitter<void> = new EventEmitter<void>();
+  @Input() task: TaskInterface | undefined;
 
-  toggleCheck(): void {
-    this.toggle.emit();
+  constructor(private todoService: TodolistService) {}
+
+  toggleCheck(event: any) {
+    if(!this.task) return
+    this.task!.completed = event.target.checked
+    this.todoService.updateTask(this.task)
   }
 
 }

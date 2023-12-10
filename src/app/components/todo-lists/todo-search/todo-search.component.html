@@ -1,0 +1,11 @@
+<div class="card-body">
+  <div class="d-flex flex-row align-items-center">
+    <input [(ngModel)]="searchTask" (input)="onSearch()"
+           type="text" class="form-control form-control-lg"
+           placeholder="Поиск задачи...">
+
+    <div class="m-lg-1">
+      <button (click)="onReset()" type="button" class="btn btn-outline-info">Сбросить</button>
+    </div>
+  </div>
+</div>

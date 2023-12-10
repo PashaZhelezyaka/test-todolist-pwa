@@ -1,8 +1,9 @@
 <div class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
   <div class="form-check me-3">
-    <input class="form-check-input me-0" type="checkbox" [checked]="isChecked" (change)="toggleCheck()" aria-label="..." />
+    <input class="form-check-input me-0" type="checkbox" [checked]="task?.completed" (change)="toggleCheck($event)"
+           aria-label="..."/>
   </div>
   <div class="px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-    <p class="lead fw-normal mb-0">{{ task }}</p>
+    <p class="lead fw-normal mb-0">{{ task?.title }}</p>
   </div>
 </div>
