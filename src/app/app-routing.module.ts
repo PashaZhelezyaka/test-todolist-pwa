@@ -5,11 +5,13 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./components/todo-lists/todo-lists.module').then(m => m.TodoListsModule)
-  }
+  },
+  {path: '**', redirectTo: ''}
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
