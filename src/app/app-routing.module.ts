@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'todo',
+    path: '',
     loadChildren: () => import('./components/todo-lists/todo-lists.module').then(m => m.TodoListsModule)
   }
 ];
