@@ -26,6 +26,10 @@ export class TodoListsComponent implements OnInit, OnDestroy {
     );
   }
 
+  refreshLoadTasks(){
+    this.todolistService.loadTasks()
+  }
+
   ngOnDestroy() {
     this.tasksSubscription.unsubscribe();
   }
