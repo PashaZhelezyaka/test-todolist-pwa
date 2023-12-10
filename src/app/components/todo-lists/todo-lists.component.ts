@@ -21,13 +21,13 @@ export class TodoListsComponent implements OnInit, OnDestroy {
         this.tasks = data;
       },
       (error) => {
-        console.log(error)
+        console.log(error);
       }
     );
   }
 
-  refreshLoadTasks(){
-    this.todolistService.loadTasks()
+  refreshLoadTasks() {
+    this.todolistService.loadTasks();
   }
 
   ngOnDestroy() {
