@@ -37,7 +37,7 @@ export class TodolistService {
     });
   }
 
-  private fetchTasksFromServer() {
+  fetchTasksFromServer() {
     this.http.get<any[]>('https://jsonplaceholder.typicode.com/users/1/todos').subscribe(
       (res) => {
         this.tasks$.next(res);
